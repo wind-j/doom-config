@@ -1,0 +1,6 @@
+* doom-config
+
+https://github.com/tecosaur/emacs-config
+https://github.com/ztlevi/doom-config
+https://github.com/forrestchang/.doom.d
+https://github.com/cnsunyour/.doom.d
