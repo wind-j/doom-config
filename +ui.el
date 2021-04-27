@@ -1,5 +1,19 @@
 ;;; +ui.el -*- lexical-binding: t; -*-
 
+(setq doom-font (font-spec :family "Fira Code" :size 14)
+      doom-variable-pitch-font (font-spec :family "Fira Code")
+      doom-unicode-font (font-spec :family "Hack")
+      doom-big-font (font-spec :family "Fira Code" :size 19))
+
+(setq doom-theme 'doom-vibrant)
+
+(setq all-the-icons-scale-factor 0.9)
+(custom-set-faces!
+  '(doom-modeline-buffer-modified :foreground "orange"))
+
+(setq frame-title-format '("Doom Emacs - %b")
+      icon-title-format frame-title-format)
+
 ;; (defun set-splash-image ()
 ;;   "Set random splash image."
 ;;   (setq fancy-splash-image
@@ -86,6 +100,7 @@
 
 (setq fancy-splash-last-size nil)
 (setq fancy-splash-last-theme nil)
+
 (defun set-appropriate-splash (&rest _)
   (let ((appropriate-image (get-appropriate-splash)))
     (unless (and (equal appropriate-image fancy-splash-last-size)
@@ -102,3 +117,7 @@
 
 (add-hook 'window-size-change-functions #'set-appropriate-splash)
 (add-hook 'doom-load-theme-hook #'set-appropriate-splash)
+
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode 1) (hl-line-mode -1))
+(setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
