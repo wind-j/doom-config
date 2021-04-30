@@ -32,8 +32,8 @@
 ;; (add-to-list 'default-frame-alist '(width . 100))
 
 ;; 调整启动时窗口大小/最大化/全屏
-;; (pushnew! initial-frame-alist '(width . 200) '(height . 48))
-(add-hook 'window-setup-hook #'toggle-frame-maximized t)
+(pushnew! initial-frame-alist '(width . 100) '(height . 48))
+;; (add-hook 'window-setup-hook #'toggle-frame-maximized t)
 ;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen t)
 
 ;; custom file

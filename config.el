@@ -57,4 +57,3 @@
 (load! "+better-defaults")
 (load! "+misc")
 (load! "+ui")
-(load! "+bindings")
