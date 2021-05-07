@@ -25,8 +25,9 @@
 ;; 拆分窗口时默认把焦点定在新窗口
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
-(defadvice split-window (after split-window-after activate)
-  (other-window 1))
+;; minibuffer 会干扰
+;; (defadvice split-window (after split-window-after activate)
+;;   (other-window 1))
 
 ;; (add-to-list 'default-frame-alist '(height . 36))
 ;; (add-to-list 'default-frame-alist '(width . 100))

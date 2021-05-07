@@ -191,9 +191,7 @@
 
        :config
        ;; literate
-       ;; (default +bindings +smartparens)
-       default
+       (default +bindings +smartparens)     
 
        :private
-       bindings
        autosave)
