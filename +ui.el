@@ -5,7 +5,7 @@
       doom-unicode-font (font-spec :family "Hack")
       doom-big-font (font-spec :family "Fira Code" :size 19))
 
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-nord-light)
 
 (setq all-the-icons-scale-factor 0.9)
 (custom-set-faces!
