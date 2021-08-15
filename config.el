@@ -58,3 +58,4 @@
 (load! "+misc")
 (load! "+ui")
 (load! "+bindings")
+(load! "+lang")

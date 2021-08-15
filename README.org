@@ -7,3 +7,25 @@ https://github.com/ztlevi/doom-config
 https://github.com/forrestchang/.doom.d
 
 https://github.com/cnsunyour/.doom.d
+
+* golang
+
+https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/go/README.org
+
+export GOPATH=~/.go
+export PATH="$PATH:$GOPATH/bin"
+
+# go env -w GO111MODULE=on
+
+go env -w GOPROXY=https://goproxy.cn,direct
+
+GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
+go get -u github.com/x-motemen/gore/cmd/gore
+go get -u github.com/stamblerre/gocode
+go get -u golang.org/x/tools/cmd/godoc
+go get -u golang.org/x/tools/cmd/goimports
+go get -u golang.org/x/tools/cmd/gorename
+go get -u golang.org/x/tools/cmd/guru
+go get -u github.com/cweill/gotests/...
+go get -u github.com/fatih/gomodifytags
