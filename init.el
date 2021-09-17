@@ -194,4 +194,5 @@
        (default +bindings +smartparens)
 
        :private
-       autosave)
+       autosave
+       table)
