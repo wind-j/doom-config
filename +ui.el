@@ -5,7 +5,7 @@
       doom-unicode-font (font-spec :family "Hack")
       doom-big-font (font-spec :family "Fira Code" :size 19))
 
-(setq doom-theme 'doom-one-light)
+(setq doom-theme 'doom-horizon)
 
 (setq all-the-icons-scale-factor 0.9)
 (custom-set-faces!
@@ -14,17 +14,18 @@
 (setq frame-title-format '("Doom Emacs - %b")
       icon-title-format frame-title-format)
 
-;; (defun set-splash-image ()
-;;   "Set random splash image."
-;;   (setq fancy-splash-image
-;;         (let ((banners (directory-files "~/.doom.d/banners"
-;;                                         'full
-;;                                         (rx ".png" eos))))
-;;           (elt banners (random (length banners))))))
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-;; (set-splash-image)
-;;
+;; https://github.com/cnsunyour/.doom.d
+(defun set-splash-image ()
+  "Set random splash image."
+  (setq fancy-splash-image
+        (let ((images (directory-files "~/.doom.d/splash-images"
+                                        'full
+                                        (rx ".png" eos))))
+          (elt images (random (length images))))))
 
+;; https://github.com/tecosaur/emacs-config
 (defvar fancy-splash-image-template
   (expand-file-name "splash-images/emacs-e-template.svg" doom-private-dir)
   "Default template svg used for the splash image, with substitutions from ")
@@ -100,7 +101,6 @@
 
 (setq fancy-splash-last-size nil)
 (setq fancy-splash-last-theme nil)
-
 (defun set-appropriate-splash (&rest _)
   (let ((appropriate-image (get-appropriate-splash)))
     (unless (and (equal appropriate-image fancy-splash-last-size)
@@ -115,8 +115,19 @@
     (setq fancy-splash-last-theme doom-theme)
     (+doom-dashboard-reload)))
 
-(add-hook 'window-size-change-functions #'set-appropriate-splash)
-(add-hook 'doom-load-theme-hook #'set-appropriate-splash)
+;; (add-hook 'window-size-change-functions #'set-appropriate-splash)
+;; (add-hook 'doom-load-theme-hook #'set-appropriate-splash)
+
+;; https://github.com/cnsunyour/.doom.d
+(defun set-splash-image ()
+  "Set random splash image."
+  (setq fancy-splash-image
+        (let ((images (directory-files "~/.doom.d/splash-images"
+                                        'full
+                                        (rx ".png" eos))))
+          (elt images (random (length images))))))
+
+(add-hook 'doom-load-theme-hook #'set-splash-image)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 (add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode 1) (hl-line-mode -1))
