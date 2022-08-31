@@ -1,3 +1,3 @@
 ;;; +misc.el -*- lexical-binding: t; -*-
 
-(setq confirm-kill-emacs nil)
+;; (setq confirm-kill-emacs nil)

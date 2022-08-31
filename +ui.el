@@ -2,7 +2,7 @@
 
 (setq doom-font (font-spec :family "Fira Code" :size 14)
       doom-variable-pitch-font (font-spec :family "Fira Code")
-      doom-unicode-font (font-spec :family "Hack")
+      doom-unicode-font (font-spec :family "Source Han Sans SC")
       doom-big-font (font-spec :family "Fira Code" :size 19))
 
 (setq doom-theme 'doom-horizon)
@@ -27,7 +27,7 @@
 
 ;; https://github.com/tecosaur/emacs-config
 (defvar fancy-splash-image-template
-  (expand-file-name "splash-images/emacs-e-template.svg" doom-private-dir)
+  (expand-file-name "splash-images/emacs-e-template.svg" doom-user-dir)
   "Default template svg used for the splash image, with substitutions from ")
 
 (defvar fancy-splash-sizes
