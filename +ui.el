@@ -2,8 +2,11 @@
 
 (setq doom-font (font-spec :family "Fira Code" :size 14)
       doom-variable-pitch-font (font-spec :family "Fira Code")
-      doom-unicode-font (font-spec :family "Source Han Sans SC")
+      doom-unicode-font (font-spec :family "思源黑体")
       doom-big-font (font-spec :family "Fira Code" :size 19))
+
+(when IS-WINDOWS
+  (setq doom-unicode-font (font-spec :family "思源黑体")))
 
 (setq doom-theme 'doom-horizon)
 
@@ -14,7 +17,7 @@
 (setq frame-title-format '("Doom Emacs - %b")
       icon-title-format frame-title-format)
 
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 ;; https://github.com/cnsunyour/.doom.d
 (defun set-splash-image ()
