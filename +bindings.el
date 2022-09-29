@@ -10,3 +10,7 @@
       :desc "M-x"                   "SPC"    #'execute-extended-command
       :desc "Find file in project"  "."      #'projectile-find-file
       )
+
+(map! :ie "M-DEL" #'doom/delete-backward-word
+      :ie "C-DEL" #'doom/delete-backward-word
+      )

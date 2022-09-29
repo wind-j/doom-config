@@ -1,9 +1,9 @@
 ;;; +ui.el -*- lexical-binding: t; -*-
 
-(setq doom-font (font-spec :family "Fira Code" :size 14)
+(setq doom-font (font-spec :family "Fira Code" :size 18)
       doom-variable-pitch-font (font-spec :family "Fira Code")
-      doom-unicode-font (font-spec :family "思源黑体")
-      doom-big-font (font-spec :family "Fira Code" :size 19))
+      doom-unicode-font (font-spec :family "Source Han Sans CN")
+      doom-big-font (font-spec :family "Fira Code" :size 20))
 
 (when IS-WINDOWS
   (setq doom-unicode-font (font-spec :family "思源黑体")))
