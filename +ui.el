@@ -8,7 +8,8 @@
 (setq nerd-icons-font-family "JetBrainsMono Nerd Font")
 
 (when IS-WINDOWS
-  (setq doom-unicode-font (font-spec :family "思源黑体")))
+  (setq doom-unicode-font (font-spec :family "思源黑体"))
+  (setq nerd-icons-font-family "JetBrainsMono NF"))
 
 (setq doom-theme 'doom-horizon)
 
