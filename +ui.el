@@ -5,6 +5,8 @@
       doom-unicode-font (font-spec :family "Source Han Sans CN")
       doom-big-font (font-spec :family "Fira Code" :size 20))
 
+(setq nerd-icons-font-family "JetBrainsMono Nerd Font")
+
 (when IS-WINDOWS
   (setq doom-unicode-font (font-spec :family "思源黑体")))
 
