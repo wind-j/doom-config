@@ -2,13 +2,13 @@
 
 (setq doom-font (font-spec :family "Fira Code" :size 18)
       doom-variable-pitch-font (font-spec :family "Fira Code")
-      doom-unicode-font (font-spec :family "Source Han Sans CN")
+      doom-symbol-font (font-spec :family "Source Han Sans CN")
       doom-big-font (font-spec :family "Fira Code" :size 20))
 
 (setq nerd-icons-font-family "JetBrainsMono Nerd Font")
 
-(when IS-WINDOWS
-  (setq doom-unicode-font (font-spec :family "思源黑体"))
+(when (featurep :system 'windows)
+  (setq doom-symbol-font (font-spec :family "思源黑体"))
   (setq nerd-icons-font-family "JetBrainsMono NF"))
 
 (setq doom-theme 'doom-horizon)
@@ -21,15 +21,6 @@
       icon-title-format frame-title-format)
 
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-;; https://github.com/cnsunyour/.doom.d
-(defun set-splash-image ()
-  "Set random splash image."
-  (setq fancy-splash-image
-        (let ((images (directory-files "~/.doom.d/splash-images"
-                                        'full
-                                        (rx ".png" eos))))
-          (elt images (random (length images))))))
 
 ;; https://github.com/tecosaur/emacs-config
 (defvar fancy-splash-image-template
@@ -128,7 +119,7 @@
 (defun set-splash-image ()
   "Set random splash image."
   (setq fancy-splash-image
-        (let ((images (directory-files "~/.doom.d/splash-images"
+        (let ((images (directory-files (expand-file-name "splash-images" doom-user-dir)
                                         'full
                                         (rx ".png" eos))))
           (elt images (random (length images))))))
